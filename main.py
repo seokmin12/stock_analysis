@@ -137,7 +137,7 @@ def get_strategy(company_code):
     now_price = now_price_location.select_one("span.blind").get_text()
     now_price = int(now_price.replace(",", ""))
 
-    start_price_location = now_price_soup.find("td", class_="first")
+    start_price_location = now_price_soup.find("span", class_="sp_txt3").parent
     start_price = start_price_location.select_one("span.blind").get_text()
     start_price = int(start_price.replace(",", ""))
 
